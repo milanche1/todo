@@ -1,5 +1,6 @@
 import React from "react";
 import TodoCard from "./TodoCard";
+import Menu from "./Menu";
 
 const container = {
   display: "block",
@@ -57,6 +58,14 @@ class TodoArea extends React.Component {
     });
   };
 
+  addTodo = () => {
+    const data = this.state.todos;
+    const nextItem = this.state.todos[data];
+    const title = "title 5";
+    const body = "flfdsk;lfdskl;fkd;s";
+    this.setState({ id: nextItem, title: title, body: body });
+  };
+
   render() {
     console.log(this.state.todos);
 
@@ -70,10 +79,12 @@ class TodoArea extends React.Component {
                   body={item.body}
                   title={item.title}
                   deleteItem={this.deleteTodo}
+                  key={item.id}
                 />
               );
             }
           })}
+          <Menu addItem={this.addTodo} />
         </div>
       </div>
     );

@@ -52,13 +52,13 @@ export default function BottomAppBar(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <AppBar position='fixed' color='primary' className={classes.appBar}>
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
-          <Fab color='secondary' aria-label='add' className={classes.fabButton}>
-            <AddIcon onClick={props.onClick} />
+          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+            <AddIcon onClick={props.addItem} />
           </Fab>
           <div className={classes.grow} />
-          <IconButton color='inherit'>
+          <IconButton color="inherit">
             <SearchIcon />
           </IconButton>
         </Toolbar>

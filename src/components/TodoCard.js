@@ -23,8 +23,6 @@ export default function MediaCard(props) {
 
   return (
     <Card className={classes.card}>
-      {console.log(props)}
-
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
