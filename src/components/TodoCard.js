@@ -1,5 +1,5 @@
 import React from "react";
-import TodoArea from './TodoArea';
+import TodoArea from "./TodoArea";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -23,25 +23,26 @@ export default function MediaCard(props) {
 
   return (
     <Card className={classes.card}>
+      {console.log(props)}
+
       <CardActionArea>
         <CardContent>
-          <Typography gutterBottom variant='h5' component='h2'>
+          <Typography gutterBottom variant="h5" component="h2">
             {props.title}
           </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
+          <Typography variant="body2" color="textSecondary" component="p">
             {props.body}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
+        <Button size="small" color="primary">
           Edit
         </Button>
-        <Button size='small' color='primary'>
+        <Button onClick={props.deleteItem} size="small" color="primary">
           Delete
         </Button>
       </CardActions>
     </Card>
   );
 }
-

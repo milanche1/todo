@@ -13,10 +13,6 @@ const gridStyle = {
   gridGap: "10%"
 };
 
-function deleteAction(id) {
-  this.setState({id: id, deleted: true});
-}
-
 class TodoArea extends React.Component {
   constructor(props) {
     super(props);
@@ -52,13 +48,30 @@ class TodoArea extends React.Component {
     };
   }
 
+  deleteTodo = () => {
+    const field = "deleted";
+    const data = this.state.todos[0];
+    data[field] = !data[field];
+    this.setState({
+      data
+    });
+  };
+
   render() {
+    console.log(this.state.todos);
+
     return (
       <div style={container}>
-        <div className='todo-area' style={gridStyle}>
-          {this.state.todos.map((item) => {
-            if(item.deleted === false) {
-              return <TodoCard body={item.body} title={item.title} />;
+        <div className="todo-area" style={gridStyle}>
+          {this.state.todos.map(item => {
+            if (item.deleted === false) {
+              return (
+                <TodoCard
+                  body={item.body}
+                  title={item.title}
+                  deleteItem={this.deleteTodo}
+                />
+              );
             }
           })}
         </div>
